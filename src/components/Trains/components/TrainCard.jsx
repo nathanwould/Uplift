@@ -1,5 +1,6 @@
 import React from 'react';
 import LineBadge from './LineBadge';
+import ServiceTypeBadge from './ServiceTypeBadge';
 
 export default function TrainCard({train}) {
   const { TrainId, ServiceType, CarCount, LineCode } = train;
@@ -7,6 +8,7 @@ export default function TrainCard({train}) {
     <div style={{
       border: '1px solid black',
       borderRadius: '4px',
+      marginBottom: '.5rem',
       padding: '0rem .5rem',
       width: '24rem'
     }}>
@@ -19,9 +21,10 @@ export default function TrainCard({train}) {
       </div>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '2fr 1fr'
+        gridTemplateColumns: '2fr 1fr',
+        alignItems: 'center'
       }}>
-        <p>Service Type: {ServiceType === 'NoPassengers' ? 'No Passengers' : ServiceType}</p>
+        <ServiceTypeBadge ServiceType={ServiceType}/>
         <p>Car Count: {CarCount}</p>
       </div>
     </div>

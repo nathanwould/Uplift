@@ -19,7 +19,7 @@ function FilterButton({ text, filterColumn, filterValue, trainFilter, setTrainFi
       background: `${theme.colors.white}`,
       border: '1px solid black',
       borderRadius: '.3rem',
-      transition: 'all .2s'
+      transition: 'all .2s',
     },
     hover: {
       background: `${theme.colors.gray[50]}`,

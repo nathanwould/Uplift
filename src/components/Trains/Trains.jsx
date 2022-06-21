@@ -2,15 +2,11 @@ import React from 'react'
 import TrainCard from './components/TrainCard'
 
 function Trains({ trains, error, loading, trainFilter }) {
-  console.log(trainFilter)
-  if (loading) {
-    return (
-      <div>Finding Trains...</div>
-    )
-  }
   return (
-    <div style={{margin: '1rem 1rem 2rem'}}>
-      {error ? <p style={{fontWeight: 'bold', color: 'red'}}>{ error.message } </p> : null}
+    <div style={{ margin: '1rem 1rem 2rem' }}>
+      <h2>Current Trains:</h2>
+      {(loading && !trains) && <p>Finding Trains...</p>}
+      {error && <p style={{fontWeight: 'bold', color: 'red'}}>{ error } </p>}
       {trains?.filter((train) => {
         return trainFilter.column === null ?
           true

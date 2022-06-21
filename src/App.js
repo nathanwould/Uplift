@@ -1,7 +1,6 @@
-import './App.css';
 import useTrains from './queries/useTrains';
 import Trains from './components/Trains/Trains';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Filters from './components/Filters/Filters';
 
 function App() {
@@ -10,11 +9,11 @@ function App() {
     column: null,
     value: null,
   });
-  const trains = data?.TrainPositions;
+
+  const trains = useMemo(() => (data?.TrainPositions), [data]);
   const carCounts = Array.from(new Set(
     trains?.map((train) => train.CarCount)
-  ));
-  console.log(error, loading)
+  )).sort((a, b) => a - b);
 
   return (
     <div className="App">

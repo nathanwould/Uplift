@@ -38,6 +38,7 @@ function Filters({trainFilter, setTrainFilter, carCounts}) {
               value: parseInt(e.target.value),
             })}
           >
+            <option value="" disabled selected hidden>-</option>
             {carCounts?.map((value) => (
               <option key={value} value={value}>{value}</option>
             ))}

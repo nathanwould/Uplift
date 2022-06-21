@@ -11,9 +11,9 @@ function App() {
   });
 
   const trains = useMemo(() => (data?.TrainPositions), [data]);
-  const carCounts = Array.from(new Set(
+  const carCounts = [...new Set(
     trains?.map((train) => train.CarCount)
-  )).sort((a, b) => a - b);
+  )].sort((a, b) => a - b);
 
   return (
     <div className="App">

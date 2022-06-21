@@ -33,12 +33,13 @@ function Filters({trainFilter, setTrainFilter, carCounts}) {
         <div>
           <h4>Number of Cars:</h4>
           <select
+            defaultValue=""
             onChange={(e) => setTrainFilter({
               column: 'CarCount',
               value: parseInt(e.target.value),
             })}
           >
-            <option value="" disabled selected hidden>-</option>
+            <option value="" disabled hidden>-</option>
             {carCounts?.map((value) => (
               <option key={value} value={value}>{value}</option>
             ))}

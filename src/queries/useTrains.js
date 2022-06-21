@@ -13,8 +13,13 @@ const useTrains = () => {
     fetch(request)
       .then(res => {
         if (!res.ok) {
-          setError(res.statusText)
-          throw Error(res.statusText)
+          const error = Object.assign({}, res, {
+            status: res.status,
+            message: res.statusText,
+          });
+          console.log(res)
+          setError(error);
+          throw Error(error);
         }
         return res.json();
       })
@@ -24,7 +29,7 @@ const useTrains = () => {
         setError(null);
       })
       .catch(err => {
-        setError(err.message);
+        setError(err);
         setLoading(false);
       })
   };

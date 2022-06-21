@@ -11,11 +11,15 @@ function App() {
     value: null,
   });
   const trains = data?.TrainPositions;
-  console.log(trains);
+  const carCounts = Array.from(new Set(
+    trains?.map((train) => train.CarCount)
+  ));
+  console.log(error, loading)
+
   return (
     <div className="App">
       <h1 style={{textAlign: "center"}}>Train Tracker</h1>
-      <Filters setTrainFilter={setTrainFilter}/>
+      <Filters trainFilter={trainFilter} setTrainFilter={setTrainFilter} carCounts={carCounts} />
       <Trains trains={trains} error={error} loading={loading} trainFilter={trainFilter} />
     </div>
   );

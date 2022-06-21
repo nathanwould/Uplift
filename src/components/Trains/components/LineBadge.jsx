@@ -1,13 +1,19 @@
-import React from 'react'
+import theme from "../../../theme";
+
+const styles = {
+  border: "1px solid",
+  borderRadius: ".3rem",
+  textAlign: "center",
+  padding: '.2rem 0'
+}
 
 function LineBadge({ LineCode }) {
+  const { gray, RD, BL, YL, OR, GR, SV } = theme.colors;
   if (LineCode === null){
     return (
       <p style={{
-        border: "1px solid #aaa",
-        borderRadius: ".3rem",
-        textAlign: "center",
-        padding: ".2rem 0",
+        ...styles,
+        borderColor: `${gray[600]}`,
       }}>
         Line Code: N/A
       </p>
@@ -16,11 +22,10 @@ function LineBadge({ LineCode }) {
   if (LineCode === "RD") {
     return (
       <p style={{
-        color: "#760100",
-        border: "1px solid #d48080",
-        borderRadius: ".3rem",
-        backgroundColor: "#eecccc",
-        textAlign: "center"
+        ...styles,
+        backgroundColor: `${RD[50]}`,
+        borderColor: `${RD[400]}`,
+        color: `${RD[600]}`,
       }}>
         Line Code: {LineCode}
       </p>
@@ -29,11 +34,10 @@ function LineBadge({ LineCode }) {
   if (LineCode === "BL") {
     return (
       <p style={{
-        color: "#225c94",
-        border: "1px solid #98c2ea",
-        borderRadius: ".3rem",
-        backgroundColor: "#d6e6f6",
-        textAlign: 'center'
+        ...styles,
+        backgroundColor: `${BL[50]}`,
+        borderColor: `${BL[400]}`,
+        color: `${BL[600]}`,
       }}>
         Line Code: {LineCode}
       </p>
@@ -42,11 +46,10 @@ function LineBadge({ LineCode }) {
   if (LineCode === "YL") {
     return (
       <p style={{
-        color: "#987c16",
-        border: "1px solid #fece25",
-        borderRadius: ".3rem",
-        backgroundColor: "#fff5d3",
-        textAlign: 'center'
+        ...styles,
+        backgroundColor: `${YL[50]}`,
+        borderColor: `${YL[400]}`,
+        color: `${YL[600]}`,
       }}>
         Line Code: {LineCode}
       </p>
@@ -55,11 +58,10 @@ function LineBadge({ LineCode }) {
   if (LineCode === "OR") {
     return (
       <p style={{
-        color: "#f67c21",
-        border: "1px solid #F9d28a",
-        borderRadius: ".3rem",
-        backgroundColor: "#f9e4d4",
-        textAlign: 'center'
+        ...styles,
+        backgroundColor: `${OR[50]}`,
+        borderColor: `${OR[400]}`,
+        color: `${OR[600]}`,
       }}>
         Line Code: {LineCode}
       </p>
@@ -68,11 +70,10 @@ function LineBadge({ LineCode }) {
   if (LineCode === "GR") {
     return (
       <p style={{
-        color: "#3c6c32",
-        border: "1px solid #aacda3",
-        borderRadius: ".3rem",
-        backgroundColor: "#ddebda",
-        textAlign: 'center'
+        ...styles,
+        backgroundColor: `${GR[50]}`,
+        borderColor: `${GR[400]}`,
+        color: `${GR[600]}`,
       }}>
         Line Code: {LineCode}
       </p>
@@ -81,11 +82,10 @@ function LineBadge({ LineCode }) {
   if (LineCode === "SV") {
     return (
       <p style={{
-        color: "#61687c",
-        border: "1px solid #c5cad8",
-        borderRadius: ".3rem",
-        backgroundColor: "#e8eaef",
-        textAlign: 'center'
+        ...styles,
+        backgroundColor: `${SV[50]}`,
+        borderColor: `${SV[400]}`,
+        color: `${SV[600]}`,
       }}>
         Line Code: {LineCode}
       </p>

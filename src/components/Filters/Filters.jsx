@@ -6,6 +6,7 @@ function Filters({setTrainFilter}) {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
+      margin: '2rem 1rem',
     }}>
       <h2>Filter Trains By:</h2>
       <div style={{
@@ -34,6 +35,10 @@ function Filters({setTrainFilter}) {
         </div>
         <div>
           <h4>Number of Cars:</h4>
+        </div>
+        <div>
+          <h4>Clear Filter:</h4>
+          <FilterButton text="Clear" filterColumn={null} filterValue={null} setTrainFilter={setTrainFilter} />
         </div>
       </div>
     </div>
